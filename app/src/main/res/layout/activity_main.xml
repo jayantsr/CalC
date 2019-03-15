@@ -8,20 +8,19 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/textcontent"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/textcontent"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="140dp"
-        android:text="1234567890"
-        android:textColor="@android:color/white"
-        android:textSize="60sp"
-        android:gravity="end"
-        android:layout_marginEnd="15dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginRight="10dp"
+        android:gravity="end"
         android:inputType="number"
-        android:maxLength="10"/>
+        android:maxLength="10"
+        android:textColor="@android:color/white"
+        android:textSize="60sp" />
 
 
     <Button
@@ -203,6 +202,28 @@
         android:text="@string/equals"
         android:textSize="30sp"
         android:textStyle="bold" />
+    <Button
+        android:id="@+id/but0"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but2"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but1"
+        android:text="@string/but0"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/aFunc"
+        android:textSize="20sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="7dp" />
 
 
 </RelativeLayout>
