@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/textcontent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:text="1234567890"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:gravity="end"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="number"
+        android:maxLength="10"/>
+
+
+    <Button
+        android:id="@+id/butesc"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="250dp"
+        android:text="@string/ese"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but7"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/butesc"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/but7"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but7"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/but4"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/but1"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/butdiv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="250dp"
+        android:layout_toEndOf="@id/butesc"
+        android:text="@string/division"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but8"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/butdiv"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but7"
+        android:text="@string/but8"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but8"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but4"
+        android:text="@string/but5"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but5"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but1"
+        android:text="@string/but2"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/butmul"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="250dp"
+        android:layout_toEndOf="@id/butdiv"
+        android:text="@string/multi"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/butmul"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but8"
+        android:text="@string/but9"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but9"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but5"
+        android:text="@string/but6"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/but3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/but6"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but2"
+        android:text="@string/but3"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/butplus"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="250dp"
+        android:layout_toEndOf="@id/butmul"
+        android:text="@string/plus"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/butminus"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/butplus"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but9"
+        android:text="@string/minus"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/butequeal"
+        android:layout_width="80dp"
+        android:layout_height="170dp"
+        android:layout_below="@id/butminus"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/but6"
+        android:text="@string/equals"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
