@@ -7,16 +7,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     Button but0, but1, but2, but3,but4, but5, but6, but7,
             but8, but9, butequal, butadd, butminus, butmulti, butdiv, butc;
 
     EditText textcontent;
-
     TextView txtaFunc;
-
+    private Double valueOne = Double.NaN;
+    private Double valueTwo;
     float mValueOne, mValuetwo;
+
+    private static final char ADD = '+';
+    private static final char SUB = '-';
+    private static final char MUL = '*';
+    private static final char DIV = '/';
+
+    private char CURRENT_ACTION;
+
+
+
 
     boolean cPlus, cMinus, cMultiply, cDivision;
 
@@ -24,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final DecimalFormat decimalFormat = new DecimalFormat("#.##########");
 
         EditText editText1 =   findViewById(R.id.textcontent);
         editText1.requestFocus();
@@ -114,16 +127,88 @@ public class MainActivity extends AppCompatActivity {
         butc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textcontent.setText("");
+                textcontent.setText(null);
+                txtaFunc.setText(null);
+                valueOne = Double.NaN;
+                CURRENT_ACTION = '0';
+
             }
         });
 
         butadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtaFunc.setText("+");
+                computeCal();
+                CURRENT_ACTION = ADD;
+                txtaFunc.setText(decimalFormat.format(valueOne)+ '+');
+                textcontent.setText(null);
             }
         });
 
+        butminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                computeCal();
+                CURRENT_ACTION = SUB;
+                txtaFunc.setText(decimalFormat.format(valueOne)+ '-');
+                textcontent.setText(null);
+            }
+        });
+
+        butmulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                computeCal();
+                CURRENT_ACTION = MUL;
+                txtaFunc.setText(decimalFormat.format(valueOne)+ '*');
+                textcontent.setText(null);
+            }
+        });
+
+        butdiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                computeCal();
+                CURRENT_ACTION = DIV;
+                txtaFunc.setText(decimalFormat.format(valueOne)+ '/');
+                textcontent.setText(null);
+            }
+        });
+
+        butequal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                computeCal();
+                textcontent.setText(decimalFormat.format(valueOne));
+                txtaFunc.setText(null);
+                valueOne = Double.NaN;
+                CURRENT_ACTION = '0';
+            }
+        });
+
+
     }
+
+    private void computeCal() {
+        if (!Double.isNaN(valueOne)) {
+            valueTwo = Double.parseDouble(textcontent.getText().toString());
+            textcontent.setText(null);
+
+            if (CURRENT_ACTION == ADD)
+                valueOne = this.valueOne+valueTwo;
+            else if (CURRENT_ACTION == SUB)
+                valueOne = this.valueOne-valueTwo;
+            else if (CURRENT_ACTION == MUL)
+                valueOne = this.valueOne*valueTwo;
+            else if (CURRENT_ACTION == DIV)
+                valueOne = this.valueOne/valueTwo;
+        }
+        else {
+            try {
+                valueOne = Double.parseDouble(textcontent.getText().toString());
+            }
+            catch (Exception e){}
+        }
+    }
+
 }
