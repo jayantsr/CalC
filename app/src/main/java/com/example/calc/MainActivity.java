@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -127,9 +128,14 @@ public class MainActivity extends AppCompatActivity {
         butpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textcontent.setText(textcontent.getText() + "." );
+
+
+                textcontent.setText(textcontent.getText() + ".");
+
             }
         });
+
+
         but00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = ADD;
-                txtaFunc.setText(decimalFormat.format(valueOne)+ '+');
+              /*  txtaFunc.setText(decimalFormat.format(valueOne)+ '+');*/
                 textcontent.setText(null);
             }
         });

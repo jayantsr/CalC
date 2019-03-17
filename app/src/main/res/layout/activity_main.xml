@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
+    android:id="@+id/mainScrCalc"
     tools:context=".MainActivity">
 
     <EditText
@@ -31,11 +32,12 @@
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="167dp"
         android:text="@string/ese"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but7"
@@ -43,11 +45,12 @@
         android:layout_height="80dp"
         android:layout_below="@id/butesc"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="@string/but7"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but4"
@@ -55,11 +58,12 @@
         android:layout_height="80dp"
         android:layout_below="@id/but7"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="@string/but4"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but1"
@@ -67,11 +71,12 @@
         android:layout_height="80dp"
         android:layout_below="@id/but4"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="@string/but1"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butdiv"
@@ -83,7 +88,8 @@
         android:layout_toEndOf="@id/butesc"
         android:text="@string/division"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but8"
@@ -95,7 +101,8 @@
         android:layout_toEndOf="@id/but7"
         android:text="@string/but8"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but5"
@@ -107,7 +114,8 @@
         android:layout_toEndOf="@id/but4"
         android:text="@string/but5"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but2"
@@ -119,7 +127,8 @@
         android:layout_toEndOf="@id/but1"
         android:text="@string/but2"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butmul"
@@ -131,7 +140,8 @@
         android:layout_toEndOf="@id/butdiv"
         android:text="@string/multi"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but9"
@@ -143,7 +153,8 @@
         android:layout_toEndOf="@id/but8"
         android:text="@string/but9"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but6"
@@ -155,7 +166,8 @@
         android:layout_toEndOf="@id/but5"
         android:text="@string/but6"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded" />
 
     <Button
         android:id="@+id/but3"
@@ -167,55 +179,68 @@
         android:layout_toEndOf="@id/but2"
         android:text="@string/but3"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butplus"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="167dp"
+        android:layout_marginEnd="31dp"
         android:layout_toEndOf="@id/butmul"
         android:text="@string/plus"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butminus"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@id/butplus"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
         android:layout_toEndOf="@id/but9"
         android:text="@string/minus"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but100"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@id/butminus"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
         android:layout_toEndOf="@id/but6"
         android:text="@string/but100"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butequeal"
         android:layout_width="80dp"
         android:layout_height="170dp"
         android:layout_below="@id/but100"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
         android:layout_toEndOf="@id/butpt"
         android:text="@string/equals"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but0"
@@ -227,7 +252,8 @@
         android:layout_toEndOf="@id/but00"
         android:text="@string/but0"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/but00"
@@ -235,11 +261,12 @@
         android:layout_height="80dp"
         android:layout_below="@id/but1"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:text="@string/but00"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <Button
         android:id="@+id/butpt"
@@ -251,7 +278,8 @@
         android:layout_toEndOf="@id/but0"
         android:text="@string/butpt"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@drawable/button_rounded"/>
 
     <TextView
         android:id="@+id/aFunc"
