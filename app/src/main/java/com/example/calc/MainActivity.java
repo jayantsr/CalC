@@ -12,13 +12,13 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     Button but0, but1, but2, but3,but4, but5, but6, but7,
-            but8, but9, butequal, butadd, butminus, butmulti, butdiv, butc;
+            but8, but9, but00, butequal, butadd, butminus, butmulti, butdiv, butc, butpt;
 
     EditText textcontent;
     TextView txtaFunc;
     private Double valueOne = Double.NaN;
     private Double valueTwo;
-    float mValueOne, mValuetwo;
+
 
     private static final char ADD = '+';
     private static final char SUB = '-';
@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-    boolean cPlus, cMinus, cMultiply, cDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         but7 = findViewById(R.id.but7);
         but8 = findViewById(R.id.but8);
         but9 = findViewById(R.id.but9);
+        but00 = findViewById(R.id.but00);
+        butpt = findViewById(R.id.butpt);
         butadd = findViewById(R.id.butplus);
         butminus = findViewById(R.id.butminus);
         butmulti = findViewById(R.id.butmul);
@@ -122,6 +122,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textcontent.setText(textcontent.getText() + "0" );
+            }
+        });
+        butpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textcontent.setText(textcontent.getText() + "." );
+            }
+        });
+        but00.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textcontent.setText(textcontent.getText() + "00" );
             }
         });
         butc.setOnClickListener(new View.OnClickListener() {
