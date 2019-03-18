@@ -13,18 +13,21 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     Button but0, but1, but2, but3,but4, but5, but6, but7,
-            but8, but9, but00, butequal, butadd, butminus, butmulti, butdiv, butc, butpt;
+            but8, but9, but00, butequal, butadd, butminus, butmulti, butdiv, butc, butpt,but100;
 
     EditText textcontent;
     TextView txtaFunc;
     private Double valueOne = Double.NaN;
     private Double valueTwo;
 
+    private Boolean ptStatus = false;
+
 
     private static final char ADD = '+';
     private static final char SUB = '-';
     private static final char MUL = '*';
     private static final char DIV = '/';
+    private static final char PERC = '%';
 
     private char CURRENT_ACTION;
 
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editText1 =   findViewById(R.id.textcontent);
         editText1.requestFocus();
         editText1.setShowSoftInputOnFocus(false);
+
 
         but0 = findViewById(R.id.but0);
         but1 = findViewById(R.id.but1);
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         butmulti = findViewById(R.id.butmul);
         butdiv = findViewById(R.id.butdiv);
         butc = findViewById(R.id.butesc);
+        but100 = findViewById(R.id.but100);
         butequal = findViewById(R.id.butequeal);
 
         textcontent = findViewById(R.id.textcontent);
@@ -128,9 +133,11 @@ public class MainActivity extends AppCompatActivity {
         butpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!ptStatus){
+                    textcontent.setText(textcontent.getText() + ".");
+                    ptStatus = true;
+                }
 
-
-                textcontent.setText(textcontent.getText() + ".");
 
             }
         });
@@ -149,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 txtaFunc.setText(null);
                 valueOne = Double.NaN;
                 CURRENT_ACTION = '0';
+                ptStatus = false;
 
             }
         });
@@ -158,8 +166,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = ADD;
-              /*  txtaFunc.setText(decimalFormat.format(valueOne)+ '+');*/
+                if (textcontent.getText().length()>=1) {
+                    txtaFunc.setText(decimalFormat.format(valueOne) + '+');
+                }
                 textcontent.setText(null);
+                ptStatus=false;
             }
         });
 
@@ -168,8 +179,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = SUB;
-                txtaFunc.setText(decimalFormat.format(valueOne)+ '-');
+                if (textcontent.getText().length()>=1) {
+                    txtaFunc.setText(decimalFormat.format(valueOne) + '-');
+                }
                 textcontent.setText(null);
+                ptStatus=false;
             }
         });
 
@@ -178,8 +192,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = MUL;
-                txtaFunc.setText(decimalFormat.format(valueOne)+ '*');
+                if (textcontent.getText().length()>=1) {
+                    txtaFunc.setText(decimalFormat.format(valueOne) + '*');
+                }
                 textcontent.setText(null);
+                ptStatus=false;
             }
         });
 
@@ -188,20 +205,44 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = DIV;
-                txtaFunc.setText(decimalFormat.format(valueOne)+ '/');
+                if (textcontent.getText().length()>=1) {
+                    txtaFunc.setText(decimalFormat.format(valueOne) + '/');
+                }
                 textcontent.setText(null);
+                ptStatus=false;
             }
         });
+        but100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (textcontent.getText().length()>=1) {
+                    computeCal();
+                    CURRENT_ACTION = PERC;
+                    computeCal();
+                    textcontent.setText((decimalFormat.format(valueOne)));
+                    ptStatus = false;
+                }
+            }
+        });
+
 
         butequal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 computeCal();
-                textcontent.setText(decimalFormat.format(valueOne));
-                txtaFunc.setText(null);
-                valueOne = Double.NaN;
-                CURRENT_ACTION = '0';
-            }
+                if (Double.isNaN(valueOne)) {
+                    textcontent.setText( "");
+                }
+                else {
+                    textcontent.setText( decimalFormat.format((valueOne)));
+                    txtaFunc.setText(null);
+                    valueOne = 0.0;
+                    CURRENT_ACTION = '0';
+                    ptStatus = false;
+                }
+             }
         });
 
 
@@ -220,6 +261,11 @@ public class MainActivity extends AppCompatActivity {
                 valueOne = this.valueOne*valueTwo;
             else if (CURRENT_ACTION == DIV)
                 valueOne = this.valueOne/valueTwo;
+            else if (CURRENT_ACTION == PERC) {
+                valueTwo = Double.parseDouble("100.0");
+                valueOne = this.valueOne / valueTwo;
+
+            }
         }
         else {
             try {
