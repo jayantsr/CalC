@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.text.DecimalFormat;
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Double valueOne = Double.NaN;
     private Double valueTwo;
 
-    private Boolean ptStatus = false;
+    private Boolean ptStatus = false, prStatus = false;
 
 
     private static final char ADD = '+';
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private static final char PERC = '%';
 
     private char CURRENT_ACTION;
-
 
 
 
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 valueOne = Double.NaN;
                 CURRENT_ACTION = '0';
                 ptStatus = false;
+                prStatus = false;
 
             }
         });
@@ -166,10 +166,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = ADD;
+                prStatus = false;
                 if (textcontent.getText().length()>=1) {
                     txtaFunc.setText(decimalFormat.format(valueOne) + '+');
                 }
-                textcontent.setText(null);
+                textcontent.setText("");
                 ptStatus=false;
             }
         });
@@ -179,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = SUB;
+                prStatus = false;
                 if (textcontent.getText().length()>=1) {
                     txtaFunc.setText(decimalFormat.format(valueOne) + '-');
                 }
@@ -192,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = MUL;
+                prStatus = false;
                 if (textcontent.getText().length()>=1) {
                     txtaFunc.setText(decimalFormat.format(valueOne) + '*');
                 }
@@ -205,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 computeCal();
                 CURRENT_ACTION = DIV;
+                prStatus = false;
                 if (textcontent.getText().length()>=1) {
                     txtaFunc.setText(decimalFormat.format(valueOne) + '/');
                 }
@@ -217,12 +221,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (textcontent.getText().length()>=1) {
+                if ((textcontent.getText().length()>=1) & !prStatus)  {
+
                     computeCal();
                     CURRENT_ACTION = PERC;
                     computeCal();
                     textcontent.setText((decimalFormat.format(valueOne)));
                     ptStatus = false;
+                    prStatus = true;
                 }
             }
         });
@@ -238,9 +244,10 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     textcontent.setText( decimalFormat.format((valueOne)));
                     txtaFunc.setText(null);
-                    valueOne = 0.0;
+                    //valueOne = null;
                     CURRENT_ACTION = '0';
                     ptStatus = false;
+                    prStatus = true;
                 }
              }
         });
